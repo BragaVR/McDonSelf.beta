@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main > section.ordine h4 {
+    text-align: center;
+    margin-top: 0;
+    width: 100%;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+main > section.ordine {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid lightgrey;
+    padding: 20px;
+    max-width: 500px;
+    min-width: 300px;
+    justify-content: center;
+    
+}
+
+section.ordine .prodotto {
+    border: 1px solid lightgrey;
+    margin: 6px;
+    flex: 0 0 calc(33.333% - 24px);
+    cursor: pointer;
+    text-align: center;
+}
+
+section.ordine .prodotto.selezionato {
+    border: 2px solid rgb(29, 134, 233);
+
+}
+
+section.ordine .foto img {
+    max-width: 90px;
+}
+
+section.ordine .descrizione {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+section.ordine  .descrizione .prezzo {
+    font-weight: bold;
+    margin: 4px auto;
+}
+
+section.ordine  .descrizione.quantità-ordine {
+    margin: 8px auto;
+    height: 14px;
+}
+
+section.ordine  .descrizione .quantità-ordine button {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+section.ordine  .descrizione .quantità-ordine .quantità {
+    font-weight: bold;
+    margin: 0 4px;
+}
+
+
+section.checkout {
+    background-color: rgb(245, 245, 245);
+    padding: 20px;
+    min-height: 200px;
+    min-width: 200px;
+    text-align: center;
+}
+
+section.checkout table {
+    width: 100%;
+    padding-top: 12px;
+    font-size: 11px;
+    margin: auto;
+}
+
+section.checkout table tbody tr:ultimo th {
+    border-top: 1px solid black;
+    padding-top: 4px;
+}
+
+
+

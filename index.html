@@ -1,0 +1,180 @@
+ <!DOCTYPE html>
+
+    <head>
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>MacdonaldSelfService</title>
+    </head>
+
+    <body>
+      
+        <main id="macDonaldSelfService">
+        	<section class="Ordine" ></section>            
+            
+                <h4> Ordina il tuo McPasto!! </h4>
+           
+                <div class="prodotto selezionato">
+
+                  <div v-for="prodotto in products" class="prodotto">
+                    <div class="foto">
+                        <img :src="prodotto.foto">
+                    </div>
+                    <div class="descrizione"></div>
+                    <span class="nome">{{prodotto.nome}}</span>
+                    <span class="prezzo">{{prodotto.prezzo}}</span>
+                    <div class="quantità-ordine">
+                            <button>-</button>
+                            <span class="quantità">1</span>
+                            <button>+</button> 
+                  </div>
+                    </div>
+                   </div>
+               
+            </section>
+
+            <section class="checkout">
+                <strong><b>Dettagli Ordine</b></strong>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>prodotto</th>
+                            <th>Totale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1x Big Mac</td>
+                            <td>5.99</td>
+                        </tr>
+                        
+                        <tr>
+                            <th>Totale</th>
+                            <th>5.99</th>
+                        </tr>
+
+                    <div>
+
+                        <h3><b>Procedi con il checkout<b></h3>
+        
+                        <input type="button" value="Salva" @click="addProduct">
+
+
+                    </div>
+        
+
+                         <button @click="revomeElement(productIndex)">Cancella Ordine</button>
+
+
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+        
+    </body>
+
+            <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+            <script type="text/javascript">
+                    new Vue({
+                        el: '#macDonaldSelfService',
+                            data(){
+                              return {
+                                products: [
+                                 {
+                                    "foto": "img/big-mac.png",
+                                    "nome": "Big Mac",
+                                    "prezzo": 5.99,
+                                    "attivo": false,
+                                    "quantità": 1
+                                },
+                                {
+                                    "foto": "img/mc-chicken.png",
+                                    "nome": "Mc Chicken",
+                                    "prezzo": 4.99,
+                                    "attivo": false,
+                                    "quantità": 1
+                                },
+                                {
+                                    "foto": "img/double-cb.png",
+                                    "nome": "Double Cheese Burger",
+                                    "prezzo": 2.99,
+                                    "attivo": false,
+                                    "quantità": 1
+                                },
+                                {
+                                    "photo": "img/fries.png",
+                                    "name": "Fries",
+                                    "price": 2.99,
+                                    "attivo": false,
+                                    "quantità": 1
+                                },
+                                {
+                                    "foto": "img/nuggets.png",
+                                    "nome": "Mc Nuggets",
+                                    "prezzo": 3.49,
+                                    "attivo": false,
+                                    "quantità": 1
+                                },
+                                {
+                                    "foto": "img/salad.png",
+                                    "nome": "Salad",
+                                    "prezzo": 2.79,
+                                    "attivo": false,
+                                    "quantità": 1
+                                },
+                                {
+                                    "foto": "img/cola.png",
+                                    "nome": "Coke",
+                                    "prezzo": 1.99,
+                                    "attivo": false,
+                                    "quantità": 1
+                                },
+                                {
+                                    "foto": "img/lipton.png",
+                                    "nome": "Ice Tea",
+                                    "prezzo": 1.99,
+                                    "attivo": false,
+                                    "quantità": 1
+                                },
+                                {
+                                    "foto": "img/water.png",
+                                    "nome": "Water",
+                                    "prezzo": 1.49,
+                                    "attivo": false,
+                                    "quantità": 1
+                                }
+                            ]
+                          };
+                        },
+
+                        methods: {
+
+                            addProduct(){
+                                this.products.push(this.newProduct);
+                            },
+                            
+
+                            revomeElement(index){
+                                this.products.splice(index, 1);
+
+                            }
+                          },
+
+
+
+
+
+
+                    });
+
+                     
+
+            </script>
+
+
+
+
+
+</html>
